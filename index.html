@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+	<title>XSS Example</title>
+</head>
+
+<body>
+
+    <h1 style="text-align: center">
+        XSS Example
+    </h1>
+
+    <div id="div"></div>
+
+    <form onsubmit="test()">
+        <input type="text" id="name" />
+        <input type="submit" />
+    </form>
+
+    <script>
+        function test(form) {
+            var div = document.getElementById("div");
+            var value = document.getElementById("name").value;
+            div.innerHTML = value;
+            return false;
+        }
+    </script>
+
+</body>
+
+</html>
